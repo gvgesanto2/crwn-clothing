@@ -5,6 +5,7 @@ import './App.css';
 
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
+import NavigationBar from './components/navigation-bar/navigation-bar.component';
 
 const HatsPage = () => (
   <div>
@@ -16,6 +17,7 @@ const HatsPage = () => (
 function App() {
   return (
     <div>
+      <NavigationBar />
       <Switch>
         <Route path="/hats" component={HatsPage} />
         <Route path="/shop" component={ShopPage} />
