@@ -1,3 +1,5 @@
+$border-primary: 1px solid black;
+
 .menu-item {
   min-width: 30%;
   height: 240px;
@@ -5,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: $border-primary;
   margin: 0 7.5px 15px;
   overflow: hidden;
 
@@ -48,7 +50,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    border: $border-primary;
     background-color: white;
     opacity: 0.7;
     position: absolute;
