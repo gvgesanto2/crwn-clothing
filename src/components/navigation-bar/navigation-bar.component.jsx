@@ -38,7 +38,7 @@ const NavigationBar = ({ currentUser, hidden }) => {
         <CartIcon />
       </div>
       {
-        hidden &&
+        !hidden &&
           <CartDropdown />
       }  
     </div>
