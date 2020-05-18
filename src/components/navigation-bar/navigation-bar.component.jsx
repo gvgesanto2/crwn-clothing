@@ -1,16 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-
-import { auth } from '../../firebase/firebase.utils';
-import CartIcon from '../cart-icon/cart-icon.component';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
-import { selectCurrentUser } from '../../redux/user/user.selectors';
-import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import { ReactComponent as Logo } from '../../assets/crwn.svg';
 import './navigation-bar.styles.scss';
+
+import { auth } from '../../firebase/firebase.utils';
+import CartIconContainer from '../cart-icon/cart-icon.container';
+import CartDropdownContainer from '../cart-dropdown/cart-dropdown.container';
 
 const NavigationBar = ({ currentUser, hidden }) => {
   return (
@@ -38,19 +34,14 @@ const NavigationBar = ({ currentUser, hidden }) => {
               SIGN IN
             </Link>
         }
-        <CartIcon />
+        <CartIconContainer />
       </div>
       {
         !hidden &&
-          <CartDropdown />
+          <CartDropdownContainer />
       }  
     </div>
   );
 }
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-  hidden: selectCartHidden
-});
-
-export default connect(mapStateToProps)(NavigationBar);
+export default NavigationBar;

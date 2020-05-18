@@ -5,14 +5,15 @@ import { createStructuredSelector } from 'reselect';
 
 import './App.css';
 
-import HomePage from './pages/homepage/homepage.component';
-import ShopPage from './pages/shop/shop.component';
-import NavigationBar from './components/navigation-bar/navigation-bar.component';
-import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
-import CheckoutPage from './pages/checkout/checkout.component';
+
+import CheckoutPageContainer from './pages/checkout/checkout.container';
+import HomePage from './pages/homepage/homepage.component';
+import ShopPageContainer from './pages/shop/shop.container';
+import NavigationBarContainer from './components/navigation-bar/navigation-bar.container';
+import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 
 class App extends React.Component {
 
@@ -45,10 +46,10 @@ class App extends React.Component {
     const { currentUser } = this.props;
     return (
       <div>
-        <NavigationBar />
+        <NavigationBarContainer />
         <Switch>
-          <Route path="/shop" component={ShopPage} />
-          <Route exact path="/checkout" component={CheckoutPage} />
+          <Route path="/shop" component={ShopPageContainer} />
+          <Route exact path="/checkout" component={CheckoutPageContainer} />
           <Route 
             exact 
             path="/signin" 

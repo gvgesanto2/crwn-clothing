@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Directory from '../../components/directory/directory.component';
+import DirectoryContainer from '../../components/directory/directory.container';
 
 const HomePage = () => {
 	return (
 		<div className="homepage">
-			<Directory />
+			<DirectoryContainer />
 		</div>
 	);
 }
