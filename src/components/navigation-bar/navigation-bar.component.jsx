@@ -8,7 +8,7 @@ import { auth } from '../../firebase/firebase.utils';
 import CartIconContainer from '../cart-icon/cart-icon.container';
 import CartDropdownContainer from '../cart-dropdown/cart-dropdown.container';
 
-const NavigationBar = ({ currentUser, hidden }) => {
+const NavigationBar = ({ currentUser, hidden, signOutStart }) => {
   return (
     <div className="nav-bar">
       <Link className="logo-container" to="/">
@@ -25,7 +25,7 @@ const NavigationBar = ({ currentUser, hidden }) => {
           currentUser ?
             <div 
               className="option" 
-              onClick={() => auth.signOut()}
+              onClick={signOutStart}
             >
               SIGN OUT
             </div>
