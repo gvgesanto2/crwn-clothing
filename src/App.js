@@ -11,7 +11,7 @@ import CheckoutPageContainer from './pages/checkout/checkout.container';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPageContainer from './pages/shop/shop.container';
 import NavigationBarContainer from './components/navigation-bar/navigation-bar.container';
-import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import SignInAndSignUpContainer from './pages/sign-in-and-sign-up/sign-in-and-sign-up.container';
 import { checkUserSession } from './redux/user/user.actions';
 
 class App extends React.Component {
@@ -42,7 +42,7 @@ class App extends React.Component {
               currentUser ? 
                 <Redirect to="/" />
                 :
-                <SignInAndSignUpPage />
+                <SignInAndSignUpContainer />
             } 
           /> 
           <Route exact path="/" component={HomePage} />
